@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barak Big - Pijamas Blusones</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'barak-rose': '#f4a7b9',
+                        'barak-rose-dark': '#e07d96',
+                        'barak-blush': '#fce4ec',
+                        'barak-mauve': '#c2728a',
+                        'barak-deep': '#8b3a52',
+                        'barak-cream': '#fff8f9',
+                        'barak-white': '#ffffff',
+                        'barak-text': '#3d1a26',
+                        'barak-soft': '#7a5060',
+                        'barak-gold': '#e8b86d',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Animación para la barra de anuncios */
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 15s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Ocultar barra de scroll en contenedores horizontales */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="bg-barak-cream font-sans text-barak-text antialiased">
+
+    <main class="max-w-md mx-auto bg-barak-white shadow-2xl min-h-screen relative overflow-hidden">
+
+        <div class="bg-barak-gold text-barak-deep text-sm font-bold py-2 marquee-container">
+            <div class="marquee-content tracking-wider">
+                🚚 ENVÍO GRATIS A NIVEL NACIONAL - PAGOS CONTRA ENTREGA 📦
+            </div>
+        </div>
+
+        <!-- El banner de bluson.png fue ajustado aquí justo debajo de la franja de envío -->
+        <img src="./Imagenes/banner-bluson.png" alt="Promo Pijamas"
+            style="width:100%; height:220px; object-fit:cover; object-position:top; display:block;">
+
+        <header class="py-4 text-center border-b border-barak-mauve/20 bg-barak-blush flex flex-col items-center">
+            <img src="./Imagenes/logo.png" alt="Barak Big Logo" class="h-16 w-auto mb-2">
+            <h1 class="text-3xl font-serif font-extrabold text-barak-deep tracking-tight">BARAK BIG</h1>
+            <p class="text-xs text-barak-soft uppercase tracking-widest mt-1">Moda Íntima & Descanso</p>
+        </header>
+
+        <section class="bg-barak-white">
+            <div class="w-full aspect-[4/5] bg-barak-cream flex items-center justify-center relative">
+                <img id="main-gallery-img" src="./Imagenes/bluson1.jpeg" alt="Producto Principal"
+                    class="w-full h-full object-cover">
+            </div>
+            <div
+                class="px-4 py-4 relative flex items-center justify-center bg-barak-white border-b border-barak-mauve/20">
+                <button id="prev-btn"
+                    class="absolute left-2 z-10 w-8 h-8 flex items-center justify-center text-barak-soft hover:text-barak-deep transition bg-barak-white/80 rounded-full shadow-sm">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                        </path>
+                    </svg>
+                </button>
+                <div id="thumbnails-container"
+                    class="flex gap-3 overflow-x-auto no-scrollbar scroll-smooth w-[80%] snap-x mx-auto py-1">
+
+                    <div class="w-20 h-24 flex-shrink-0 cursor-pointer border-2 border-transparent hover:border-barak-mauve snap-start thumbnail"
+                        data-src="./Imagenes/bluson1.jpeg">
+                        <img src="./Imagenes/bluson1.jpeg" class="w-full h-full object-cover pointer-events-none">
+                    </div>
+                    <div class="w-20 h-24 flex-shrink-0 cursor-pointer border-2 border-transparent hover:border-barak-mauve snap-start thumbnail"
+                        data-src="./Imagenes/bluson2.jpeg">
+                        <img src="./Imagenes/bluson2.jpeg" class="w-full h-full object-cover pointer-events-none">
+                    </div>
+                    <div class="w-20 h-24 flex-shrink-0 cursor-pointer border-2 border-transparent hover:border-barak-mauve snap-start thumbnail"
+                        data-src="./Imagenes/bluson3.jpeg">
+                        <img src="./Imagenes/bluson3.jpeg" class="w-full h-full object-cover pointer-events-none">
+                    </div>
+                    <div class="w-20 h-24 flex-shrink-0 cursor-pointer border-2 border-transparent hover:border-barak-mauve snap-start thumbnail"
+                        data-src="./Imagenes/bluson4.jpeg">
+                        <img src="./Imagenes/bluson4.jpeg" class="w-full h-full object-cover pointer-events-none">
+                    </div>
+                    <div class="w-20 h-24 flex-shrink-0 cursor-pointer border-2 border-transparent hover:border-barak-mauve snap-start thumbnail"
+                        data-src="./Imagenes/bluson5.jpeg">
+                        <img src="./Imagenes/bluson5.jpeg" class="w-full h-full object-cover pointer-events-none">
+                    </div>
+                    <div class="w-20 h-24 flex-shrink-0 cursor-pointer border-2 border-transparent hover:border-barak-mauve snap-start thumbnail"
+                        data-src="./Imagenes/bluson6.jpeg">
+                        <img src="./Imagenes/bluson6.jpeg" class="w-full h-full object-cover pointer-events-none">
+                    </div>
+                    <div class="w-20 h-24 flex-shrink-0 cursor-pointer border-2 border-transparent hover:border-barak-mauve snap-start thumbnail"
+                        data-src="./Imagenes/bluson7.jpeg">
+                        <img src="./Imagenes/bluson7.jpeg" class="w-full h-full object-cover pointer-events-none">
+                    </div>
+                    <div class="w-20 h-24 flex-shrink-0 cursor-pointer border-2 border-transparent hover:border-barak-mauve snap-start thumbnail"
+                        data-src="./Imagenes/bluson8.jpeg">
+                        <img src="./Imagenes/bluson8.jpeg" class="w-full h-full object-cover pointer-events-none">
+                    </div>
+                    <div class="w-20 h-24 flex-shrink-0 cursor-pointer border-2 border-transparent hover:border-barak-mauve snap-start thumbnail"
+                        data-src="./Imagenes/bluson9.jpeg">
+                        <img src="./Imagenes/bluson9.jpeg" class="w-full h-full object-cover pointer-events-none">
+                    </div>
+                    <div class="w-20 h-24 flex-shrink-0 cursor-pointer border-2 border-transparent hover:border-barak-mauve snap-start thumbnail"
+                        data-src="./Imagenes/bluson10.jpeg">
+                        <img src="./Imagenes/bluson10.jpeg" class="w-full h-full object-cover pointer-events-none">
+                    </div>
+                </div>
+                <button id="next-btn"
+                    class="absolute right-2 z-10 w-8 h-8 flex items-center justify-center text-barak-soft hover:text-barak-deep transition bg-barak-white/80 rounded-full shadow-sm">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="px-6 py-5 text-left bg-barak-white shadow-sm z-10 relative">
+                <h2 class="text-2xl font-black text-barak-deep leading-tight">Combo 5 Pijamas Blusones</h2>
+
+                <div class="flex items-center gap-3 mt-2 mb-2">
+                    <span class="text-3xl font-black text-barak-gold">$100.000</span>
+                    <span class="text-sm text-barak-soft line-through">$150.000</span>
+                    <span class="bg-barak-rose text-barak-deep text-xs font-bold px-2 py-1 rounded">Ahorras
+                        $50.000</span>
+                </div>
+
+                <div class="flex gap-1 text-barak-gold text-sm mb-4 items-center">
+                    ★★★★★ <span class="text-barak-soft text-xs ml-1">(+150 valoraciones)</span>
+                </div>
+
+                <p class="text-barak-text text-sm leading-relaxed mb-5">
+                    Descubre nuestras espectaculares pijamas blusones elaboradas en auténtica <strong>Piel de
+                        Durazno</strong>. Ideales para sentir un abrazo de suavidad y frescura al descansar.
+                    <br><br>
+                    ✨ No destiñen, no encogen y mantienen su forma.<br>
+                    🎁 <span class="font-bold text-barak-deep">Promoción especial:</span> Llevas 5 unidades por solo
+                    $100.000.
+                </p>
+
+                <a href="#formulario"
+                    class="observe-btn inline-flex mt-1 w-full bg-barak-deep text-barak-white font-black text-lg py-4 rounded-xl shadow-lg hover:bg-barak-rose-dark transition transform hover:scale-105 items-center justify-center gap-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
+                        </path>
+                    </svg>
+                    PEDIR Y PAGAR EN CASA
+                </a>
+            </div>
+        </section>
+
+        <section class="py-4 bg-barak-blush border-y border-barak-rose text-center">
+            <p class="text-sm font-bold text-barak-deep mb-2">🔥 ¡LA OFERTA TERMINA EN!</p>
+            <div class="flex justify-center gap-3 text-barak-deep" id="countdown">
+                <div class="flex flex-col items-center"><span class="text-2xl font-black" id="hours">02</span><span
+                        class="text-[10px] uppercase">Horas</span></div><span class="text-2xl font-black">:</span>
+                <div class="flex flex-col items-center"><span class="text-2xl font-black" id="minutes">45</span><span
+                        class="text-[10px] uppercase">Min</span></div><span class="text-2xl font-black">:</span>
+                <div class="flex flex-col items-center"><span class="text-2xl font-black" id="seconds">30</span><span
+                        class="text-[10px] uppercase">Seg</span></div>
+            </div>
+        </section>
+
+        <section class="p-6 bg-barak-white">
+            <h3 class="text-xl font-bold mb-3 text-center text-barak-deep">¿Por qué amarás nuestros blusones?</h3>
+            <p class="text-barak-text text-sm text-center mb-6 leading-relaxed">
+                Nuestras pijamas están confeccionadas en <strong>auténtica Piel de Durazno</strong>. Una tela ultra
+                suave, fresca y con una caída espectacular que no se deforma ni destiñe. Siente un abrazo de suavidad
+                cada noche.
+            </p>
+
+            <div
+                class="w-full h-64 bg-barak-blush rounded-2xl flex items-center justify-center mb-6 border-2 border-dashed border-barak-mauve overflow-hidden">
+                <img src="./Imagenes/download.gif" alt="Textura de la tela en vivo" class="w-full h-full object-cover">
+            </div>
+        </section>
+
+        <section class="bg-barak-cream border-y border-barak-gold py-6 px-4 text-center">
+
+            <h3 class="text-xl font-bold text-barak-deep mb-1">¡Compra 100% Segura!</h3>
+            <p class="text-sm text-barak-text">No arriesgues tu dinero. Pides hoy, recibes en la puerta de tu casa y
+                <strong>pagas al mensajero en efectivo</strong>.
+            </p>
+        </section>
+
+        <section id="formulario" class="p-6 bg-barak-blush">
+            <div class="bg-barak-white rounded-2xl shadow-lg p-5">
+                <h3 class="text-2xl font-extrabold text-center text-barak-deep mb-2">Finaliza tu Pedido</h3>
+                <p class="text-center text-sm text-barak-soft mb-6">Ingresa tus datos para el envío</p>
+
+                <form action="#" method="POST" class="space-y-4">
+                    <div class="space-y-3 mb-6">
+                        <label class="block text-sm font-bold text-barak-text">Selecciona tu Promoción:</label>
+
+                        <label
+                            class="flex items-center p-3 border-2 border-barak-mauve bg-barak-blush rounded-lg cursor-pointer">
+                            <input type="radio" name="oferta" value="5"
+                                class="w-5 h-5 text-barak-deep focus:ring-barak-deep border-barak-mauve" checked>
+                            <span class="ml-3 font-bold text-barak-text">5 Blusones x $100.000</span>
+                        </label>
+
+                        <label
+                            class="flex items-center p-3 border border-barak-mauve/50 rounded-lg cursor-pointer hover:bg-barak-cream">
+                            <input type="radio" name="oferta" value="10"
+                                class="w-5 h-5 text-barak-deep focus:ring-barak-deep border-barak-mauve/50">
+                            <span class="ml-3 font-bold text-barak-text">10 Blusones x $180.000</span>
+                            <span
+                                class="ml-auto text-xs bg-barak-rose text-barak-deep px-2 py-1 rounded font-bold">AHORRAS
+                                MÁS</span>
+                        </label>
+
+                        <label
+                            class="flex items-center p-3 border border-barak-mauve/50 rounded-lg cursor-pointer hover:bg-barak-cream">
+                            <input type="radio" name="oferta" value="15"
+                                class="w-5 h-5 text-barak-deep focus:ring-barak-deep border-barak-mauve/50">
+                            <span class="ml-3 font-bold text-barak-text">15 Blusones x $270.000</span>
+                        </label>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="col-span-2">
+                            <label class="block text-xs font-semibold text-barak-soft mb-1">Cédula</label>
+                            <input type="number" required
+                                class="w-full p-3 border border-barak-mauve/50 rounded-lg focus:ring-2 focus:ring-barak-deep focus:border-transparent outline-none transition bg-barak-white text-barak-text"
+                                placeholder="Tu número de documento">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-barak-soft mb-1">Nombres</label>
+                            <input type="text" required
+                                class="w-full p-3 border border-barak-mauve/50 rounded-lg focus:ring-2 focus:ring-barak-deep focus:border-transparent outline-none transition bg-barak-white text-barak-text"
+                                placeholder="Tus nombres">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-barak-soft mb-1">Apellidos</label>
+                            <input type="text" required
+                                class="w-full p-3 border border-barak-mauve/50 rounded-lg focus:ring-2 focus:ring-barak-deep focus:border-transparent outline-none transition bg-barak-white text-barak-text"
+                                placeholder="Tus apellidos">
+                        </div>
+                        <div class="col-span-2">
+                            <label class="block text-xs font-semibold text-barak-soft mb-1">Departamento</label>
+                            <select required
+                                class="w-full p-3 border border-barak-mauve/50 rounded-lg focus:ring-2 focus:ring-barak-deep focus:border-transparent outline-none bg-barak-white text-barak-text">
+                                <option value="" disabled selected>Selecciona tu departamento</option>
+                                <option value="Antioquia">Antioquia</option>
+                                <option value="Bogota">Bogotá D.C.</option>
+                                <option value="Valle">Valle del Cauca</option>
+                            </select>
+                        </div>
+                        <div class="col-span-2">
+                            <label class="block text-xs font-semibold text-barak-soft mb-1">Ciudad / Municipio</label>
+                            <select required
+                                class="w-full p-3 border border-barak-mauve/50 rounded-lg focus:ring-2 focus:ring-barak-deep focus:border-transparent outline-none bg-barak-white text-barak-text">
+                                <option value="" disabled selected>Selecciona tu ciudad</option>
+                                <option value="Medellin">Medellín</option>
+                                <option value="Bogota">Bogotá</option>
+                                <option value="Cali">Cali</option>
+                            </select>
+                        </div>
+                        <div class="col-span-2">
+                            <label class="block text-xs font-semibold text-barak-soft mb-1">Dirección Exacta</label>
+                            <input type="text" required
+                                class="w-full p-3 border border-barak-mauve/50 rounded-lg focus:ring-2 focus:ring-barak-deep focus:border-transparent outline-none transition bg-barak-white text-barak-text"
+                                placeholder="Ej: Calle 10 # 20-30 Barrio Centro">
+                        </div>
+                        <div class="col-span-2">
+                            <label class="block text-xs font-semibold text-barak-soft mb-1">Correo Electrónico <span
+                                    class="text-barak-mauve font-normal">(Opcional)</span></label>
+                            <input type="email"
+                                class="w-full p-3 border border-barak-mauve/50 rounded-lg focus:ring-2 focus:ring-barak-deep focus:border-transparent outline-none transition bg-barak-white text-barak-text"
+                                placeholder="tucorreo@ejemplo.com">
+                        </div>
+                    </div>
+
+                    <button type="submit"
+                        class="observe-btn w-full mt-4 bg-barak-deep text-barak-white font-black text-lg py-4 rounded-xl shadow-lg hover:bg-barak-rose-dark transition flex items-center justify-center gap-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z">
+                            </path>
+                        </svg>
+                        COMPRAR Y PAGAR EN CASA
+                    </button>
+                    <p class="text-center text-xs text-barak-soft mt-2">✨ Tus datos están protegidos.</p>
+                </form>
+            </div>
+        </section>
+
+        <section class="py-8 px-6 bg-barak-cream">
+            <h3 class="text-xl font-bold text-center mb-6 text-barak-deep">Clientas Felices 💕</h3>
+            <div class="space-y-4">
+                <div class="bg-barak-white p-4 rounded-xl shadow-sm border border-barak-mauve/20">
+                    <div class="flex items-center gap-1 text-barak-gold mb-2">★★★★★</div>
+                    <p class="text-sm text-barak-text italic">"Me encantaron, la tela sí es piel de durazno de verdad,
+                        súper fresquitas. Pedí la promo de 5 y ya quiero encargar las de 10. Llegaron súper rápido."</p>
+                    <p class="text-xs font-bold text-barak-deep mt-2">- Camila Restrepo</p>
+                </div>
+                <div class="bg-barak-white p-4 rounded-xl shadow-sm border border-barak-mauve/20">
+                    <div class="flex items-center gap-1 text-barak-gold mb-2">★★★★★</div>
+                    <p class="text-sm text-barak-text italic">"Excelente servicio. Me dio mucha confianza poder pagar al
+                        recibir porque uno a veces desconfía en internet. Son hermosas y la talla me quedó perfecta."
+                    </p>
+                    <p class="text-xs font-bold text-barak-deep mt-2">- Andrea Salazar</p>
+                </div>
+                <div class="bg-barak-white p-4 rounded-xl shadow-sm border border-barak-mauve/20">
+                    <div class="flex items-center gap-1 text-barak-gold mb-2">★★★★★</div>
+                    <p class="text-sm text-barak-text italic">"Los estampados están divinos. Las lavé y no se encogen ni
+                        pierden el color. La mejor inversión para dormir cómoda."</p>
+                    <p class="text-xs font-bold text-barak-deep mt-2">- Valentina Gómez</p>
+                </div>
+                <div class="bg-barak-white p-4 rounded-xl shadow-sm border border-barak-mauve/20">
+                    <div class="flex items-center gap-1 text-barak-gold mb-2">★★★★★</div>
+                    <p class="text-sm text-barak-text italic">"10/10. Muy cumplidos con la entrega y el repartidor muy
+                        amable. Las recomiendo a ojo cerrado, súper suaves."</p>
+                    <p class="text-xs font-bold text-barak-deep mt-2">- Natalia Pineda</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-barak-text text-barak-cream text-center py-6 text-xs">
+            <p>&copy; 2026 Barak Big. Todos los derechos reservados.</p>
+        </footer>
+
+    </main>
+
+    <a href="https://wa.me/573000000000?text=Hola,%20quiero%20más%20información%20sobre%20las%20pijamas%20piel%20de%20durazno"
+        target="_blank"
+        class="fixed bottom-24 right-4 bg-barak-gold text-barak-deep p-4 rounded-full shadow-2xl hover:bg-barak-cream transition duration-300 z-50 flex items-center justify-center">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+            <path
+                d="M12.031 21.492c-1.637 0-3.238-.426-4.654-1.233l-.334-.191-3.456.906.924-3.367-.21-.334c-.882-1.408-1.348-3.04-1.348-4.725 0-4.908 3.996-8.904 8.904-8.904 2.378 0 4.615.926 6.296 2.607 1.681 1.682 2.608 3.918 2.608 6.296-.001 4.909-3.997 8.905-8.73 8.945zm0-15.828c-3.819 0-6.923 3.104-6.923 6.923 0 1.222.319 2.415.925 3.473l.255.446-.549 2.003 2.052-.538.432.261c1.026.621 2.203.949 3.407.949h.004c3.819 0 6.923-3.104 6.923-6.923 0-1.85-.72-3.589-2.028-4.896-1.307-1.308-3.045-2.028-4.898-2.028zm3.784 9.488c-.207-.104-1.228-.606-1.418-.675-.19-.069-.328-.104-.467.104-.139.208-.535.675-.656.814-.121.139-.243.156-.45.052-.207-.104-.876-.323-1.669-.953-.616-.49-1.033-1.096-1.154-1.304-.121-.208-.013-.321.091-.425.093-.093.207-.242.311-.363.104-.121.139-.208.207-.346.069-.139.035-.26-.017-.364-.052-.104-.467-1.127-.64-1.543-.169-.408-.34-.353-.467-.36-.121-.006-.26-.008-.398-.008-.139 0-.363.052-.553.26-.19.208-.726.709-.726 1.729s.743 2.006.847 2.145c.104.139 1.463 2.234 3.542 3.131.494.213.88.34 1.18.436.496.158.948.136 1.304.082.404-.061 1.228-.501 1.401-.986.173-.485.173-.899.121-.986-.053-.087-.191-.139-.398-.243z" />
+        </svg>
+    </a>
+
+    <!-- Sticky CTA Bottom -->
+    <div id="sticky-cta"
+        class="fixed bottom-0 left-0 w-full p-4 bg-barak-white/95 backdrop-blur-md shadow-[0_-4px_10px_rgba(0,0,0,0.1)] z-40 transform translate-y-full transition-transform duration-300 flex justify-center">
+        <a href="#formulario"
+            class="w-full max-w-md bg-barak-deep text-barak-white font-black py-4 rounded-xl shadow-lg hover:bg-barak-rose-dark transition flex items-center justify-center gap-2 text-lg">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
+                </path>
+            </svg>
+            PEDIR Y PAGAR EN CASA
+        </a>
+    </div>
+
+    <script>
+        // Lógica simple para el temporizador (Simula que acaba en un par de horas)
+        function startTimer(duration) {
+            let timer = duration, hours, minutes, seconds;
+            setInterval(function () {
+                hours = parseInt(timer / 3600, 10);
+                minutes = parseInt((timer % 3600) / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                hours = hours < 10 ? "0" + hours : hours;
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                document.getElementById('hours').textContent = hours;
+                document.getElementById('minutes').textContent = minutes;
+                document.getElementById('seconds').textContent = seconds;
+
+                if (--timer < 0) {
+                    timer = duration; // Reinicia el temporizador si llega a 0 (estrategia de escasez continua)
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            let twoHours = 60 * 60 * 2 + 45 * 60; // 2 horas y 45 minutos
+            startTimer(twoHours);
+
+            // Script para cambiar estilos visuales al seleccionar una oferta
+            const radios = document.querySelectorAll('input[name="oferta"]');
+            radios.forEach(radio => {
+                radio.addEventListener('change', function () {
+                    radios.forEach(r => {
+                        r.closest('label').classList.remove('bg-barak-blush', 'border-2', 'border-barak-mauve');
+                        r.closest('label').classList.add('border-barak-mauve/50');
+                    });
+                    if (this.checked) {
+                        this.closest('label').classList.add('bg-barak-blush', 'border-2', 'border-barak-mauve');
+                        this.closest('label').classList.remove('border-barak-mauve/50');
+                    }
+                });
+            });
+
+            // Lógica de Galería
+            const mainImg = document.getElementById('main-gallery-img');
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            const container = document.getElementById('thumbnails-container');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+
+            if (thumbnails && mainImg) {
+                thumbnails.forEach(thumb => {
+                    thumb.addEventListener('click', () => {
+                        mainImg.src = thumb.dataset.src;
+                        thumbnails.forEach(t => {
+                            t.classList.remove('border-barak-text');
+                            t.classList.add('border-transparent');
+                        });
+                        thumb.classList.remove('border-transparent');
+                        thumb.classList.add('border-barak-text');
+                        thumb.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+                    });
+                });
+            }
+
+            if (prevBtn && nextBtn && container) {
+                prevBtn.addEventListener('click', () => {
+                    container.scrollBy({ left: -200, behavior: 'smooth' });
+                });
+                nextBtn.addEventListener('click', () => {
+                    container.scrollBy({ left: 200, behavior: 'smooth' });
+                });
+            }
+
+            // Lógica del sticky CTA dinámico
+            const stickyCta = document.getElementById('sticky-cta');
+            const observeBtns = document.querySelectorAll('.observe-btn');
+
+            if ('IntersectionObserver' in window && stickyCta) {
+                let visibilityMap = new Map();
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        visibilityMap.set(entry.target, entry.isIntersecting);
+                    });
+
+                    const isAnyVisible = Array.from(visibilityMap.values()).includes(true);
+
+                    if (isAnyVisible) {
+                        stickyCta.classList.add('translate-y-full'); // Ocultar
+                    } else {
+                        stickyCta.classList.remove('translate-y-full'); // Mostrar
+                    }
+                }, { threshold: 0.1 });
+
+                observeBtns.forEach(btn => {
+                    visibilityMap.set(btn, false);
+                    observer.observe(btn);
+                });
+            }
+        };
+    </script>
+</body>
+
+</html>
