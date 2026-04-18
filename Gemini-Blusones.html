@@ -47,6 +47,7 @@
             from {
                 transform: translateX(0);
             }
+
             to {
                 transform: translateX(calc(-100% - 2rem));
             }
@@ -210,10 +211,13 @@
             </p>
 
             <div
-                class="w-full h-64 bg-barak-blush rounded-2xl flex items-center justify-center mb-6 border-2 border-dashed border-barak-mauve overflow-hidden">
-                <img src="./Imagenes/download.gif" alt="Textura de la tela en vivo" class="w-full h-full object-cover">
+                class="w-full bg-barak-blush rounded-2xl flex items-center justify-center mb-6 border-2 border-dashed border-barak-mauve overflow-hidden">
+                <img src="./Imagenes/download.gif" alt="Textura de la tela en vivo"
+                    class="w-full h-auto object-contain">
             </div>
         </section>
+
+
 
         <section class="bg-barak-cream border-y border-barak-gold py-6 px-4 text-center">
 
@@ -221,6 +225,19 @@
             <p class="text-sm text-barak-text">No arriesgues tu dinero. Pides hoy, recibes en la puerta de tu casa y
                 <strong>pagas al mensajero en efectivo</strong>.
             </p>
+        </section>
+
+        <section class="bg-barak-white py-6">
+            <div class="px-6 pb-6">
+                <h3 class="text-xl font-bold mb-4 text-center text-barak-deep">Tenemos Una Super Promo Muy Especial 👚👇
+                </h3>
+                <div
+                    class="w-full flex justify-center rounded-2xl overflow-hidden shadow-xl border border-barak-mauve/20 relative">
+                    <video src="./Imagenes/IMG_1868.mp4" controls playsinline
+                        class="w-full max-h-[500px] object-cover"></video>
+                    <!-- Eliminamos la etiqueta estática que podría tapar los controles del video -->
+                </div>
+            </div>
         </section>
 
         <section id="formulario" class="p-6 bg-barak-blush">
