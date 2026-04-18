@@ -201,6 +201,50 @@
                         class="text-[10px] uppercase">Seg</span></div>
             </div>
         </section>
+        <section class="px-6 py-8 bg-barak-blush/30 border-y border-barak-mauve/20">
+            <h3 class="text-2xl font-black text-center text-barak-deep mb-5">🎁 Lo que vas a recibir</h3>
+            <div class="bg-barak-white border-2 border-barak-gold rounded-2xl p-5 shadow-lg relative">
+                
+                <div class="absolute -top-4 -right-2 bg-barak-deep text-barak-white font-black text-[10px] px-3 py-1 rounded-full shadow-md transform rotate-6 border border-barak-gold">
+                    ¡OFERTA PREMIUM!
+                </div>
+                
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                        <div class="w-6 h-6 rounded-full bg-barak-rose flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <span class="text-barak-deep font-black text-sm">✓</span>
+                        </div>
+                        <p class="text-sm text-barak-text font-medium leading-snug">
+                            <span class="font-bold text-barak-deep">5 Pijamas Blusones</span> confeccionados en auténtica Piel de Durazno (diseños hermosos y surtidos).
+                        </p>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <div class="w-6 h-6 rounded-full bg-barak-rose flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <span class="text-barak-deep font-black text-sm">✓</span>
+                        </div>
+                        <p class="text-sm text-barak-text font-medium leading-snug">
+                            <span class="font-bold text-barak-deep">Envío 100% GRATIS</span> a nivel nacional. Nosotros cubrimos el costo de la transportadora.
+                        </p>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <div class="w-6 h-6 rounded-full bg-barak-rose flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <span class="text-barak-deep font-black text-sm">✓</span>
+                        </div>
+                        <p class="text-sm text-barak-text font-medium leading-snug">
+                            <span class="font-bold text-barak-deep">Pago Seguro en Casa</span>. Pagas únicamente en efectivo cuando el paquete llegue a tus manos.
+                        </p>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <div class="w-6 h-6 rounded-full bg-barak-rose flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <span class="text-barak-deep font-black text-sm">✓</span>
+                        </div>
+                        <p class="text-sm text-barak-text font-medium leading-snug">
+                            <span class="font-bold text-barak-deep">Empaque seguro</span> y garantía de fábrica para que compres con total tranquilidad.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
         <section class="p-6 bg-barak-white">
             <h3 class="text-xl font-bold mb-3 text-center text-barak-deep">¿Por qué amarás nuestros blusones?</h3>
@@ -295,22 +339,16 @@
                         </div>
                         <div class="col-span-2">
                             <label class="block text-xs font-semibold text-barak-soft mb-1">Departamento</label>
-                            <select required
-                                class="w-full p-3 border border-barak-mauve/50 rounded-lg focus:ring-2 focus:ring-barak-deep focus:border-transparent outline-none bg-barak-white text-barak-text">
-                                <option value="" disabled selected>Selecciona tu departamento</option>
-                                <option value="Antioquia">Antioquia</option>
-                                <option value="Bogota">Bogotá D.C.</option>
-                                <option value="Valle">Valle del Cauca</option>
+                            <select id="departamento" required
+                                class="w-full p-3 border border-barak-mauve/50 rounded-lg focus:ring-2 focus:ring-barak-deep focus:border-transparent outline-none bg-barak-white text-barak-text cursor-pointer">
+                                <option value="" disabled selected>Cargando departamentos...</option>
                             </select>
                         </div>
                         <div class="col-span-2">
                             <label class="block text-xs font-semibold text-barak-soft mb-1">Ciudad / Municipio</label>
-                            <select required
-                                class="w-full p-3 border border-barak-mauve/50 rounded-lg focus:ring-2 focus:ring-barak-deep focus:border-transparent outline-none bg-barak-white text-barak-text">
-                                <option value="" disabled selected>Selecciona tu ciudad</option>
-                                <option value="Medellin">Medellín</option>
-                                <option value="Bogota">Bogotá</option>
-                                <option value="Cali">Cali</option>
+                            <select id="ciudad" required disabled
+                                class="w-full p-3 border border-barak-mauve/50 rounded-lg focus:ring-2 focus:ring-barak-deep focus:border-transparent outline-none bg-barak-white text-barak-text disabled:bg-barak-blush disabled:opacity-70 disabled:cursor-not-allowed transition cursor-pointer">
+                                <option value="" disabled selected>Primero selecciona un departamento</option>
                             </select>
                         </div>
                         <div class="col-span-2">
@@ -329,13 +367,13 @@
                     </div>
 
                     <button type="submit"
-                        class="observe-btn w-full mt-4 bg-barak-deep text-barak-white font-black text-lg py-4 rounded-xl shadow-lg hover:bg-barak-rose-dark transition flex items-center justify-center gap-2">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        class="observe-btn w-full max-w-sm mx-auto mt-6 bg-barak-deep text-barak-white font-black text-base md:text-lg py-4 px-3 rounded-xl shadow-xl hover:bg-barak-rose-dark transition transform hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-2">
+                        <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z">
                             </path>
                         </svg>
-                        COMPRAR Y PAGAR EN CASA
+                        <span class="tracking-wide">COMPRAR Y PAGAR EN CASA</span>
                     </button>
                     <p class="text-center text-xs text-barak-soft mt-2">✨ Tus datos están protegidos.</p>
                 </form>
@@ -379,12 +417,26 @@
 
     </main>
 
-    <a href="https://wa.me/573000000000?text=Hola,%20quiero%20más%20información%20sobre%20las%20pijamas%20piel%20de%20durazno"
+    <a href="https://wa.me/573153246835?text=Hola,%20quiero%20más%20información%20sobre%20las%20pijamas%20piel%20de%20durazno"
         target="_blank"
-        class="fixed bottom-24 right-4 bg-barak-gold text-barak-deep p-4 rounded-full shadow-2xl hover:bg-barak-cream transition duration-300 z-50 flex items-center justify-center">
-        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-            <path
-                d="M12.031 21.492c-1.637 0-3.238-.426-4.654-1.233l-.334-.191-3.456.906.924-3.367-.21-.334c-.882-1.408-1.348-3.04-1.348-4.725 0-4.908 3.996-8.904 8.904-8.904 2.378 0 4.615.926 6.296 2.607 1.681 1.682 2.608 3.918 2.608 6.296-.001 4.909-3.997 8.905-8.73 8.945zm0-15.828c-3.819 0-6.923 3.104-6.923 6.923 0 1.222.319 2.415.925 3.473l.255.446-.549 2.003 2.052-.538.432.261c1.026.621 2.203.949 3.407.949h.004c3.819 0 6.923-3.104 6.923-6.923 0-1.85-.72-3.589-2.028-4.896-1.307-1.308-3.045-2.028-4.898-2.028zm3.784 9.488c-.207-.104-1.228-.606-1.418-.675-.19-.069-.328-.104-.467.104-.139.208-.535.675-.656.814-.121.139-.243.156-.45.052-.207-.104-.876-.323-1.669-.953-.616-.49-1.033-1.096-1.154-1.304-.121-.208-.013-.321.091-.425.093-.093.207-.242.311-.363.104-.121.139-.208.207-.346.069-.139.035-.26-.017-.364-.052-.104-.467-1.127-.64-1.543-.169-.408-.34-.353-.467-.36-.121-.006-.26-.008-.398-.008-.139 0-.363.052-.553.26-.19.208-.726.709-.726 1.729s.743 2.006.847 2.145c.104.139 1.463 2.234 3.542 3.131.494.213.88.34 1.18.436.496.158.948.136 1.304.082.404-.061 1.228-.501 1.401-.986.173-.485.173-.899.121-.986-.053-.087-.191-.139-.398-.243z" />
+        class="fixed bottom-24 right-4 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:bg-[#1ebd5a] transition duration-300 z-50 flex items-center justify-center">
+        <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+            viewBox="0 0 48 48">
+            <path fill="#fff"
+                d="M4.9,43.3l2.7-9.8C5.9,30.6,5,27.3,5,24C5,13.5,13.5,5,24,5c5.1,0,9.8,2,13.4,5.6	C41,14.2,43,18.9,43,24c0,10.5-8.5,19-19,19c0,0,0,0,0,0h0c-3.2,0-6.3-0.8-9.1-2.3L4.9,43.3z">
+            </path>
+            <path fill="#fff"
+                d="M4.9,43.8c-0.1,0-0.3-0.1-0.4-0.1c-0.1-0.1-0.2-0.3-0.1-0.5L7,33.5c-1.6-2.9-2.5-6.2-2.5-9.6	C4.5,13.2,13.3,4.5,24,4.5c5.2,0,10.1,2,13.8,5.7c3.7,3.7,5.7,8.6,5.7,13.8c0,10.7-8.7,19.5-19.5,19.5c-3.2,0-6.3-0.8-9.1-2.3	L5,43.8C5,43.8,4.9,43.8,4.9,43.8z">
+            </path>
+            <path fill="#cfd8dc"
+                d="M24,5c5.1,0,9.8,2,13.4,5.6C41,14.2,43,18.9,43,24c0,10.5-8.5,19-19,19h0c-3.2,0-6.3-0.8-9.1-2.3	L4.9,43.3l2.7-9.8C5.9,30.6,5,27.3,5,24C5,13.5,13.5,5,24,5 M24,43L24,43L24,43 M24,43L24,43L24,43 M24,4L24,4C13,4,4,13,4,24	c0,3.4,0.8,6.7,2.5,9.6L3.9,43c-0.1,0.3,0,0.7,0.3,1c0.2,0.2,0.4,0.3,0.7,0.3c0.1,0,0.2,0,0.3,0l9.7-2.5c2.8,1.5,6,2.2,9.2,2.2	c11,0,20-9,20-20c0-5.3-2.1-10.4-5.8-14.1C34.4,6.1,29.4,4,24,4L24,4z">
+            </path>
+            <path fill="#40c351"
+                d="M35.2,12.8c-3-3-6.9-4.6-11.2-4.6C15.3,8.2,8.2,15.3,8.2,24c0,3,0.8,5.9,2.4,8.4L11,33l-1.6,5.8	l6-1.6l0.6,0.3c2.4,1.4,5.2,2.2,8,2.2h0c8.7,0,15.8-7.1,15.8-15.8C39.8,19.8,38.2,15.8,35.2,12.8z">
+            </path>
+            <path fill="#fff" fill-rule="evenodd"
+                d="M19.3,16c-0.4-0.8-0.7-0.8-1.1-0.8c-0.3,0-0.6,0-0.9,0	s-0.8,0.1-1.3,0.6c-0.4,0.5-1.7,1.6-1.7,4s1.7,4.6,1.9,4.9s3.3,5.3,8.1,7.2c4,1.6,4.8,1.3,5.7,1.2c0.9-0.1,2.8-1.1,3.2-2.3	c0.4-1.1,0.4-2.1,0.3-2.3c-0.1-0.2-0.4-0.3-0.9-0.6s-2.8-1.4-3.2-1.5c-0.4-0.2-0.8-0.2-1.1,0.2c-0.3,0.5-1.2,1.5-1.5,1.9	c-0.3,0.3-0.6,0.4-1,0.1c-0.5-0.2-2-0.7-3.8-2.4c-1.4-1.3-2.4-2.8-2.6-3.3c-0.3-0.5,0-0.7,0.2-1c0.2-0.2,0.5-0.6,0.7-0.8	c0.2-0.3,0.3-0.5,0.5-0.8c0.2-0.3,0.1-0.6,0-0.8C20.6,19.3,19.7,17,19.3,16z"
+                clip-rule="evenodd"></path>
         </svg>
     </a>
 
@@ -501,8 +553,47 @@
                     observer.observe(btn);
                 });
             }
+
+            // Lógica para poblar Departamentos y Ciudades desde colombia.js
+            const deptSelect = document.getElementById('departamento');
+            const ciudadSelect = document.getElementById('ciudad');
+
+            // Los datos ya están cargados gracias a colombia.js
+            if (window.colombiaData && window.colombiaData.length > 0) {
+                // Limpiar el estado de carga y añadir opción por defecto
+                deptSelect.innerHTML = '<option value="" disabled selected>Selecciona tu departamento</option>';
+
+                // Poblar el select de departamentos
+                window.colombiaData.forEach(dept => {
+                    const option = document.createElement('option');
+                    option.value = dept.departamento;
+                    option.textContent = dept.departamento;
+                    deptSelect.appendChild(option);
+                });
+            } else {
+                deptSelect.innerHTML = '<option value="" disabled selected>Error (No se cargaron los datos)</option>';
+            }
+
+            deptSelect.addEventListener('change', function () {
+                // Activar select de ciudades y limpiarlo
+                ciudadSelect.disabled = false;
+                ciudadSelect.innerHTML = '<option value="" disabled selected>Selecciona tu ciudad</option>';
+
+                // Buscar ciudades del departamento seleccionado
+                const selectedDept = window.colombiaData.find(d => d.departamento === this.value);
+                if (selectedDept && selectedDept.ciudades) {
+                    selectedDept.ciudades.forEach(ciudad => {
+                        const option = document.createElement('option');
+                        option.value = ciudad;
+                        option.textContent = ciudad;
+                        ciudadSelect.appendChild(option);
+                    });
+                }
+            });
         };
     </script>
+    <!-- Cargamos los datos localmente saltándonos las restricciones de seguridad CORS -->
+    <script src="./colombia.js"></script>
 </body>
 
 </html>
