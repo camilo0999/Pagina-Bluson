@@ -29,22 +29,26 @@
     <style>
         /* Animación para la barra de anuncios */
         .marquee-container {
+            display: flex;
             overflow: hidden;
             white-space: nowrap;
+            gap: 2rem;
         }
 
         .marquee-content {
-            display: inline-block;
-            animation: marquee 15s linear infinite;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: space-around;
+            gap: 2rem;
+            animation: marquee 12s linear infinite;
         }
 
         @keyframes marquee {
-            0% {
-                transform: translateX(100%);
+            from {
+                transform: translateX(0);
             }
-
-            100% {
-                transform: translateX(-100%);
+            to {
+                transform: translateX(calc(-100% - 2rem));
             }
         }
 
@@ -64,9 +68,14 @@
 
     <main class="max-w-md mx-auto bg-barak-white shadow-2xl min-h-screen relative overflow-hidden">
 
-        <div class="bg-barak-gold text-barak-deep text-sm font-bold py-2 marquee-container">
+        <div class="bg-barak-gold text-barak-deep text-base font-extrabold py-2.5 marquee-container">
             <div class="marquee-content tracking-wider">
-                🚚 ENVÍO GRATIS A NIVEL NACIONAL - PAGOS CONTRA ENTREGA 📦
+                <span>🚚 ENVÍO GRATIS A NIVEL NACIONAL 🛍️ - PAGOS CONTRA ENTREGA 📦</span>
+                <span>🚚 ENVÍO GRATIS A NIVEL NACIONAL 🛍️ - PAGOS CONTRA ENTREGA 📦</span>
+            </div>
+            <div class="marquee-content tracking-wider" aria-hidden="true">
+                <span>🚚 ENVÍO GRATIS A NIVEL NACIONAL 🛍️ - PAGOS CONTRA ENTREGA 📦</span>
+                <span>🚚 ENVÍO GRATIS A NIVEL NACIONAL 🛍️ - PAGOS CONTRA ENTREGA 📦</span>
             </div>
         </div>
 
