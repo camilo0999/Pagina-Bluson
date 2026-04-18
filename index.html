@@ -363,7 +363,8 @@
                                 placeholder="Tus apellidos">
                         </div>
                         <div class="col-span-2">
-                            <label class="block text-xs font-semibold text-barak-soft mb-1">Número de WhatsApp / Teléfono</label>
+                            <label class="block text-xs font-semibold text-barak-soft mb-1">Número de WhatsApp /
+                                Teléfono</label>
                             <input type="tel" id="telefono" required
                                 class="w-full p-3 border border-barak-mauve/50 rounded-lg focus:ring-2 focus:ring-barak-deep focus:border-transparent outline-none transition bg-barak-white text-barak-text"
                                 placeholder="Ej: 3001234567">
@@ -632,7 +633,7 @@
             // Evento TikTok: Iniciar Checkout al dar clic en los botones
             const checkoutBtns = document.querySelectorAll('a[href="#formulario"]');
             checkoutBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
+                btn.addEventListener('click', function () {
                     ttq.track('InitiateCheckout');
                 });
             });
@@ -657,7 +658,7 @@
                         if (selectedOffer.value === "10") price = 180000;
                         if (selectedOffer.value === "15") price = 270000;
                     }
-                    
+
                     ttq.track('CompletePayment', {
                         content_name: 'Combo Pijamas Blusones',
                         value: price,
@@ -676,7 +677,7 @@
 
                     try {
                         // Importante: Remplazar esta URL con la URL de Producción de tu Webhook en n8n
-                        const webhookUrl = "http://localhost:5678/webhook/nuevo-pedido";
+                        const webhookUrl = "https://9a97-200-31-13-65.ngrok-free.app/webhook/nuevo-pedido";
 
                         await fetch(webhookUrl, {
                             method: "POST",
