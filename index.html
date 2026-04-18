@@ -346,21 +346,27 @@
                     <div class="grid grid-cols-2 gap-3">
                         <div class="col-span-2">
                             <label class="block text-xs font-semibold text-barak-soft mb-1">Cédula</label>
-                            <input type="number" required
+                            <input type="number" id="cedula" required
                                 class="w-full p-3 border border-barak-mauve/50 rounded-lg focus:ring-2 focus:ring-barak-deep focus:border-transparent outline-none transition bg-barak-white text-barak-text"
                                 placeholder="Tu número de documento">
                         </div>
                         <div>
                             <label class="block text-xs font-semibold text-barak-soft mb-1">Nombres</label>
-                            <input type="text" required
+                            <input type="text" id="nombres" required
                                 class="w-full p-3 border border-barak-mauve/50 rounded-lg focus:ring-2 focus:ring-barak-deep focus:border-transparent outline-none transition bg-barak-white text-barak-text"
                                 placeholder="Tus nombres">
                         </div>
                         <div>
                             <label class="block text-xs font-semibold text-barak-soft mb-1">Apellidos</label>
-                            <input type="text" required
+                            <input type="text" id="apellidos" required
                                 class="w-full p-3 border border-barak-mauve/50 rounded-lg focus:ring-2 focus:ring-barak-deep focus:border-transparent outline-none transition bg-barak-white text-barak-text"
                                 placeholder="Tus apellidos">
+                        </div>
+                        <div class="col-span-2">
+                            <label class="block text-xs font-semibold text-barak-soft mb-1">Número de WhatsApp / Teléfono</label>
+                            <input type="tel" id="telefono" required
+                                class="w-full p-3 border border-barak-mauve/50 rounded-lg focus:ring-2 focus:ring-barak-deep focus:border-transparent outline-none transition bg-barak-white text-barak-text"
+                                placeholder="Ej: 3001234567">
                         </div>
                         <div class="col-span-2">
                             <label class="block text-xs font-semibold text-barak-soft mb-1">Departamento</label>
@@ -378,14 +384,21 @@
                         </div>
                         <div class="col-span-2">
                             <label class="block text-xs font-semibold text-barak-soft mb-1">Dirección Exacta</label>
-                            <input type="text" required
+                            <input type="text" id="direccion" required
                                 class="w-full p-3 border border-barak-mauve/50 rounded-lg focus:ring-2 focus:ring-barak-deep focus:border-transparent outline-none transition bg-barak-white text-barak-text"
                                 placeholder="Ej: Calle 10 # 20-30 Barrio Centro">
                         </div>
                         <div class="col-span-2">
+                            <label class="block text-xs font-semibold text-barak-soft mb-1">Observaciones <span
+                                    class="text-barak-mauve font-normal">(Opcional)</span></label>
+                            <textarea id="observaciones" rows="2"
+                                class="w-full p-3 border border-barak-mauve/50 rounded-lg focus:ring-2 focus:ring-barak-deep focus:border-transparent outline-none transition bg-barak-white text-barak-text resize-none"
+                                placeholder="Ej: Dejar en portería, casa esquina, etc..."></textarea>
+                        </div>
+                        <div class="col-span-2">
                             <label class="block text-xs font-semibold text-barak-soft mb-1">Correo Electrónico <span
                                     class="text-barak-mauve font-normal">(Opcional)</span></label>
-                            <input type="email"
+                            <input type="email" id="correo"
                                 class="w-full p-3 border border-barak-mauve/50 rounded-lg focus:ring-2 focus:ring-barak-deep focus:border-transparent outline-none transition bg-barak-white text-barak-text"
                                 placeholder="tucorreo@ejemplo.com">
                         </div>
@@ -624,14 +637,22 @@
                 });
             });
 
-            // Evento de TikTok al enviar el formulario (Pago en Casa)
+            // Evento de TikTok al enviar el formulario (Pago en Casa) & Webhook n8n
             const form = document.querySelector('form');
             if (form) {
-                form.addEventListener('submit', function () {
+                form.addEventListener('submit', async function (e) {
+                    e.preventDefault(); // Evitamos que la web recargue
+                    const submitBtn = form.querySelector('button[type="submit"]');
+                    const originalBtnContent = submitBtn.innerHTML;
+                    submitBtn.innerHTML = 'Enviando...';
+                    submitBtn.disabled = true;
+
                     // Obtener la opción seleccionada para enviar el valor correcto a TikTok
                     let price = 100000;
+                    let numPijamas = "5";
                     const selectedOffer = document.querySelector('input[name="oferta"]:checked');
                     if (selectedOffer) {
+                        numPijamas = selectedOffer.value;
                         if (selectedOffer.value === "5") price = 100000;
                         if (selectedOffer.value === "10") price = 180000;
                         if (selectedOffer.value === "15") price = 270000;
@@ -642,6 +663,38 @@
                         value: price,
                         currency: 'COP'
                     });
+
+                    // Capturar datos para n8n
+                    const data = {
+                        nombre: document.getElementById('nombres').value.trim() + " " + document.getElementById('apellidos').value.trim(),
+                        telefono: document.getElementById('telefono').value.trim(),
+                        direccion: document.getElementById('direccion').value.trim() + " (" + document.getElementById('ciudad').value + ", " + document.getElementById('departamento').value + ")",
+                        producto: numPijamas + " Pijamas",
+                        precio: price,
+                        observaciones: document.getElementById('observaciones').value.trim()
+                    };
+
+                    try {
+                        // Importante: Remplazar esta URL con la URL de Producción de tu Webhook en n8n
+                        const webhookUrl = "http://localhost:5678/webhook/nuevo-pedido";
+
+                        await fetch(webhookUrl, {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify(data)
+                        });
+
+                        alert("¡Pedido recibido con éxito! Pronto nos contactaremos contigo.");
+                        form.reset();
+                    } catch (error) {
+                        console.error("Error al enviar el pedido:", error);
+                        alert("Hubo un problema enviando tu pedido. Por favor intenta de nuevo.");
+                    } finally {
+                        submitBtn.innerHTML = originalBtnContent;
+                        submitBtn.disabled = false;
+                    }
                 });
             }
         };
